@@ -1,4 +1,13 @@
 angular.module('endorphNews', [])
+
+	angular.module('endorphNews', [])
+		.factory('posts', [function(){
+	    	var o = {
+		    	posts: []
+		  	};
+		  	return o;
+	}])
+
 	.controller('MainCtrl', [
 		'$scope',
 		function($scope){
@@ -14,7 +23,7 @@ angular.module('endorphNews', [])
 
 		$scope.addPost = function(){
 		  if(!$scope.title || $scope.title === '') { return; }
-		  
+
 		  $scope.posts.push({
 		    title: $scope.title,
 		    link: $scope.link,
