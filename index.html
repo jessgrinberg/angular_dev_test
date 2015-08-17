@@ -6,20 +6,30 @@
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="app.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
 
 
 
 
   <style> .glyphicon-thumbs-up { cursor:pointer } </style>
 </head>
-<body ng-app="endorphNews" ng-controller="MainCtrl">
+<body ng-app="endorphNews">
+
+
+
+
 
 
 {{test}}
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
 
+    <div class="col-md-6 col-md-offset-3">
+<ui-view>
+<!-- <script type="text/ng-template" id="/home.html"></script> -->
+
+
+{{test}}
       <div class="page-header">
         <h1>Endorph News</h1>
       </div>
@@ -57,7 +67,11 @@
         <button type="submit" class="btn btn-primary">Post</button>
       </form>
 
+	</ui-view>
     </div>
   </div>
+<!-- </script>  -->
+
+<script type="text/ng-template" id="/home.html"></script>
 </body>
 </html>
