@@ -1,7 +1,7 @@
-angular.module('endorphNews', ['ui.router'])
+var app = angular.module('endorphNews', ['ui.router'])
 
 
-	.config([
+	app.config([
 	'$stateProvider',
 	'$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
@@ -24,14 +24,14 @@ angular.module('endorphNews', ['ui.router'])
 
 
 
-	.factory('posts', [function(){
+	app.factory('posts', [function(){
 	  var o = {
 	    posts: []
 	  };
 	  return o;
 	}])
 
-	.controller('MainCtrl', [
+	app.controller('MainCtrl', [
 		'$scope',
 		'posts',
 		function($scope, posts){
@@ -69,7 +69,7 @@ angular.module('endorphNews', ['ui.router'])
 
 }])
 
-		.controller('PostsCtrl', [
+		app.controller('PostsCtrl', [
 		'$scope',
 		'$stateParams',
 		'posts',
