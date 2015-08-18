@@ -46,6 +46,13 @@ var app = angular.module('endorphNews', ['ui.router'])
 		  });
 	  };
 
+	  o.upvote = function(post) {
+		  return $http.put('/posts/' + post._id + '/upvote')
+		    .success(function(data){
+		      post.upvotes += 1;
+		    });
+	  };
+
 
 
 
@@ -99,7 +106,7 @@ var app = angular.module('endorphNews', ['ui.router'])
 		};
 
 		$scope.incrementUpvotes = function(post) {
-  			post.upvotes += 1;
+  			posts.upvote(post);
 		};
 
 }])
