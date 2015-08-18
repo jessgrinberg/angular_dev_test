@@ -58,12 +58,15 @@ var app = angular.module('endorphNews', ['ui.router'])
 		    });
 	  };
 
-	  o.get = function(id) {
-		  return $http.get('/posts/' + id).then(function(res){
-		    return res.data;
-	  });
+o.get = function(id) {
+  return $http.get('/posts/' + id).then(function(res){
+    return res.data;
+  });
 };
 
+o.addComment = function(id, comment) {
+  return $http.post('/posts/' + id + '/comments', comment);
+};
 
 
 
@@ -139,6 +142,16 @@ var app = angular.module('endorphNews', ['ui.router'])
 				  $scope.body = '';
 		};
 
+// $scope.addComment = function(){
+//   if($scope.body === '') { return; }
+//   posts.addComment(post._id, {
+//     body: $scope.body,
+//     author: 'user',
+//   }).success(function(comment) {
+//     $scope.post.comments.push(comment);
+//   });
+//   $scope.body = '';
+// };
 
 		}]);
 
